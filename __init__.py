@@ -1,13 +1,13 @@
 """
 /***************************************************************************
- RemoveEmptyLayers
-                                 A QGIS plugin
- This plugin 'cleans' the layer list widget by removing empty layers
-                             -------------------
-        begin                : 2011-03-06
-        copyright            : (C) 2011 by German Carrillo, GeoTux
-        email                : geotux_tuxman@linuxmail.org
- ***************************************************************************/
+Test
+A QGIS plugin
+Plugin for testing things
+-------------------
+begin : 2015-01-28
+copyright : (C) 2015 by German Carrillo, GeoTux
+email : geotux_tuxman@linuxmail.org
+***************************************************************************/
 
 /***************************************************************************
  *                                                                         *
