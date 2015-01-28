@@ -1,0 +1,34 @@
+; the next section is mandatory
+[general]
+name=Test plugin
+description=For testing
+
+version=1.0
+qgisMinimumVersion=2.0
+
+; not used yet, will allow to put a plugin in the right menu
+category=Layers
+
+author=Germán Carrillo (GeoTux)
+email=geotux_tuxman@linuxmail.org
+
+; end of mandatory metadata
+
+; start of optional metadata
+
+changelog=1.0 (28.01.2015) 
+    ...First version
+
+; tags are in comma separated value format, spaces are allowed
+tags=tests
+
+homepage=http://geotux.tuxfamily.org
+tracker=http://hub.qgis.org/gacarrillor
+repository=http://hub.qgis.org/gacarrillor
+
+
+; path to a icon within the plugin folder
+icon=icon_default.png
+
+experimental=False
+deprecated=False
