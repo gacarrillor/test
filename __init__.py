@@ -30,6 +30,6 @@ def icon():
 def qgisMinimumVersion():
     return "2.0"
 def classFactory(iface):
-    # load RemoveEmptyLayers class from file RemoveEmptyLayers
+    # load Test class from file test.py
     from test import Test
     return Test(iface)
