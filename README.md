@@ -5,7 +5,7 @@ QGIS plugin for testing random things related to PyQGIS
 
 * Download the zip file.
 * Extract it in your QGIS plugins folder.
-* Change the name of the extracted folder to "test."
+* Change the name of the extracted folder to "test".
 * Start your QGIS and go to `Plugins->Manage and Install Plugins`.
 * Type test and check the plugin. 
 
