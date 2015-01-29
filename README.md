@@ -11,6 +11,8 @@ QGIS plugin for testing random things related to PyQGIS
 
 **Usage**
 
-* Open QGIS, load a vector layer, and click on the plugins icon.
-* Start editing and edit any existing attribute value. 
-* You should see a message box after that change.
+* Open QGIS and you should see:
+  * A new menu "My tools"
+  * A new toolbar "My tools"
+  * A missing Edit menu 
+  * A missing File toolbar

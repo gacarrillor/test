@@ -23,7 +23,7 @@ import os
 # Import the PyQt and QGIS libraries
 from qgis.core import QgsApplication
 from PyQt4.QtCore import ( QObject, SIGNAL )
-from PyQt4.QtGui import QMessageBox, QIcon, QAction
+from PyQt4.QtGui import QMessageBox, QIcon, QAction, QMenu
 
 class Test:
 
@@ -38,9 +38,29 @@ class Test:
         # connect the action to the run method
         QObject.connect(self.action, SIGNAL("triggered()"), self.run)
 
-        # Add toolbar button and menu item
+        # Add toolbar button to the Plugins toolbar
         self.iface.addToolBarIcon(self.action)
+        # Add menu item to the Plugins menu
         self.iface.addPluginToMenu("&Test", self.action)
+        
+        # Add a custom toolbar
+        self.toolbar = self.iface.addToolBar( "My tools" )
+        self.toolbar.addAction( self.action )
+        
+        # Remove a QGIS toolbar
+        fileToolBar = self.iface.fileToolBar()
+        self.iface.mainWindow().removeToolBar( fileToolBar )
+        
+        # Add a custom menu
+        self.menu = QMenu( "&My tools", self.iface.mainWindow().menuBar() )
+        actions = self.iface.mainWindow().menuBar().actions()
+        lastAction = actions[-1]
+        self.iface.mainWindow().menuBar().insertMenu( lastAction, self.menu )
+        self.menu.addAction( self.action )
+
+        # Remove a QGIS menu
+        editMenu = self.iface.editMenu()
+        editMenu.menuAction().setVisible( False )
 
     def unload(self):
         # Remove the plugin menu item and icon
@@ -49,15 +69,6 @@ class Test:
 
     # run method that performs all the real work
     def run(self):
-        #self.lyr = self.iface.activeLayer()
-        self.lyr = self.iface.mapCanvas().layers()[0]
-        self.lyr.attributeValueChanged.connect(self.mySlot)
-        
-    def mySlot(self):
         QMessageBox.information( self.iface.mainWindow(), "Test", 
-            "Attributes were changed!!!", QMessageBox.Ok )
+            "The plugin button was clicked!", QMessageBox.Ok )
             
-    def mySlot2(self, fid, idx, v):
-        QMessageBox.information( self.iface.mainWindow(), "Test", 
-            "Attributes changed for feature " + str(fid), QMessageBox.Ok )
-
