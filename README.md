@@ -11,7 +11,7 @@ QGIS plugin for testing random things related to PyQGIS
 
 **Usage**
 
-* Open QGIS and you should see:
+* Open QGIS and you should notice:
   * A new menu "My tools"
   * A new toolbar "My tools"
   * A missing Edit menu 
