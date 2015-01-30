@@ -11,8 +11,8 @@ QGIS plugin for testing random things related to PyQGIS
 
 **Usage**
 
-* Open QGIS and you should notice:
-  * A new menu "My tools"
-  * A new toolbar "My tools"
-  * A missing Edit menu 
-  * A missing File toolbar
+Open QGIS and you should notice that the plugin button (identified by an icon of
+a directory) is mutually exclusive with QGIS buttons from Navigation and Attributes
+toolbars. For instance, if you click on Pan tool and then click on the plugin button,
+the Pan tool is deactivated. 
+

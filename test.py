@@ -23,7 +23,7 @@ import os
 # Import the PyQt and QGIS libraries
 from qgis.core import QgsApplication
 from PyQt4.QtCore import ( QObject, SIGNAL )
-from PyQt4.QtGui import QMessageBox, QIcon, QAction, QMenu
+from PyQt4.QtGui import QMessageBox, QIcon, QAction, QMenu, QActionGroup, QWidgetAction
 
 class Test:
 
@@ -43,25 +43,28 @@ class Test:
         # Add menu item to the Plugins menu
         self.iface.addPluginToMenu("&Test", self.action)
         
-        # Add a custom toolbar
-        self.toolbar = self.iface.addToolBar( "My tools" )
-        self.toolbar.addAction( self.action )
-        
-        # Remove a QGIS toolbar
-        fileToolBar = self.iface.fileToolBar()
-        self.iface.mainWindow().removeToolBar( fileToolBar )
-        
-        # Add a custom menu
-        self.menu = QMenu( "&My tools", self.iface.mainWindow().menuBar() )
-        actions = self.iface.mainWindow().menuBar().actions()
-        lastAction = actions[-1]
-        self.iface.mainWindow().menuBar().insertMenu( lastAction, self.menu )
-        self.menu.addAction( self.action )
+        # Make sure your action can be toggled 
+        self.action.setCheckable( True )
 
-        # Remove a QGIS menu
-        editMenu = self.iface.editMenu()
-        editMenu.menuAction().setVisible( False )
+        # Build an action (button) list from QGIS navigation toolbar
+        actionList = self.iface.mapNavToolToolBar().actions()
 
+        # Add actions from QGIS attributes toolbar (handling QWidgetActions)
+        tmpActionList = self.iface.attributesToolBar().actions()        
+        for action in tmpActionList:
+            if isinstance(action, QWidgetAction):
+                actionList.extend( action.defaultWidget().actions() )
+            else:
+                actionList.append( action ) 
+        # ... add other toolbars' action lists...
+        
+        # Build a group with the nav toolbar and add your own action
+        group = QActionGroup( self.iface.mainWindow() )
+        group.setExclusive(True)
+        for action in actionList:
+            group.addAction( action )
+        group.addAction( self.action )
+                
     def unload(self):
         # Remove the plugin menu item and icon
         self.iface.removePluginMenu( "&Test", self.action ) 
