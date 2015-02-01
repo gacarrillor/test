@@ -30,6 +30,8 @@ class Test:
     def __init__(self, iface):
         # Save reference to the QGIS interface
         self.iface = iface
+        QMessageBox.information( self.iface.mainWindow(), "Test", 
+            "__init__(self, iface) was called!", QMessageBox.Ok )
 
     def initGui(self):
         # Create action that will start plugin configuration
@@ -43,35 +45,22 @@ class Test:
         # Add menu item to the Plugins menu
         self.iface.addPluginToMenu("&Test", self.action)
         
-        # Make sure your action can be toggled 
-        self.action.setCheckable( True )
-
-        # Build an action (button) list from QGIS navigation toolbar
-        actionList = self.iface.mapNavToolToolBar().actions()
-
-        # Add actions from QGIS attributes toolbar (handling QWidgetActions)
-        tmpActionList = self.iface.attributesToolBar().actions()        
-        for action in tmpActionList:
-            if isinstance(action, QWidgetAction):
-                actionList.extend( action.defaultWidget().actions() )
-            else:
-                actionList.append( action ) 
-        # ... add other toolbars' action lists...
-        
-        # Build a group with the nav toolbar and add your own action
-        group = QActionGroup( self.iface.mainWindow() )
-        group.setExclusive(True)
-        for action in actionList:
-            group.addAction( action )
-        group.addAction( self.action )
-                
+        QMessageBox.information( self.iface.mainWindow(), "Test", 
+            "initGui(self) was called!\n\n" +
+            "Your plugin GUI has been set up.", QMessageBox.Ok )
+                            
     def unload(self):
         # Remove the plugin menu item and icon
         self.iface.removePluginMenu( "&Test", self.action ) 
         self.iface.removeToolBarIcon(self.action)
+        
+        QMessageBox.information( self.iface.mainWindow(), "Test", 
+            "unload(self) was called!\n\n" +
+            "Your plugin widgets were removed from QGIS GUI.", QMessageBox.Ok )
 
     # run method that performs all the real work
     def run(self):
         QMessageBox.information( self.iface.mainWindow(), "Test", 
-            "The plugin button was clicked!", QMessageBox.Ok )
+            "run(self) was called!\n\n" +
+            "It's time to do something useful with QGIS!", QMessageBox.Ok )
             
