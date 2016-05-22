@@ -1,5 +1,15 @@
 # test
-QGIS plugin for testing random things related to PyQGIS
+QGIS plugin for testing a variety of aspects related to PyQGIS
+
+**Tags**
+
+Go to Tags to see all versions of the plugin (each version tackles a different aspect). This is a summary:
+
+* [Attribute value changed](https://github.com/gacarrillor/test/tree/attribute_value_changed)
+* [Function notifications](https://github.com/gacarrillor/test/tree/function_notifications)
+* [Mutually exclusive buttons](https://github.com/gacarrillor/test/tree/mutually_exclusive_buttons)
+* [QGIS GUI customization](https://github.com/gacarrillor/test/tree/qgis_gui_customization)
+
 
 **Installation**
 
