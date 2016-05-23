@@ -3,7 +3,7 @@ QGIS plugin for testing a variety of aspects related to PyQGIS
 
 **Tags**
 
-Go to Tags to see all versions of the plugin (each version tackles a different aspect). This is a summary:
+Go to [Tags](https://github.com/gacarrillor/test/tags) to see all versions of the plugin (each version tackles a different aspect). This is a summary:
 
 * [Attribute value changed](https://github.com/gacarrillor/test/tree/attribute_value_changed)
 
