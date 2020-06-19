@@ -1,34 +1,17 @@
-; the next section is mandatory
 [general]
 name=Test plugin
-description=For testing
-
-version=1.0
-qgisMinimumVersion=2.0
-
-; not used yet, will allow to put a plugin in the right menu
-category=Layers
-
+description=Plugin for testing several things in QGIS
+about=Plugin for learning PyQGIS and testing several things in QGIS 
+version=1.0.0
+qgisMinimumVersion=3.0
+qgisMaximumVersion=3.99
+category=Processing
 author=Germán Carrillo (GeoTux)
-email=geotux_tuxman@linuxmail.org
-
-; end of mandatory metadata
-
-; start of optional metadata
-
-changelog=1.0 (28.01.2015) 
-    ...First version
-
-; tags are in comma separated value format, spaces are allowed
+email=gacarrillo@linuxmail.org
 tags=tests
-
-homepage=http://geotux.tuxfamily.org
-tracker=http://hub.qgis.org/gacarrillor
-repository=http://hub.qgis.org/gacarrillor
-
-
-; path to a icon within the plugin folder
+homepage=https://github.com/gacarrillor/test
+tracker=https://github.com/gacarrillor/test/issues
+repository=https://github.com/gacarrillor/test
 icon=icon_default.png
-
 experimental=False
 deprecated=False

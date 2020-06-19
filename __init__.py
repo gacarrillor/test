@@ -6,7 +6,7 @@ Plugin for testing things
 -------------------
 begin : 2015-01-28
 copyright : (C) 2015 by German Carrillo, GeoTux
-email : geotux_tuxman@linuxmail.org
+email : gcarrillo@linuxmail.org
 ***************************************************************************/
 
 /***************************************************************************
@@ -19,17 +19,7 @@ email : geotux_tuxman@linuxmail.org
  ***************************************************************************/
  This script initializes the plugin, making it known to QGIS.
 """
-def name():
-    return "Test"
-def description():
-    return "For testing purposes"
-def version():
-    return "Version 1.0"
-def icon():
-    return "icon_default.png"
-def qgisMinimumVersion():
-    return "2.0"
 def classFactory(iface):
     # load Test class from file test.py
-    from test import Test
+    from .test import Test
     return Test(iface)
