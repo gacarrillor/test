@@ -2,16 +2,25 @@
 name=Test plugin
 description=Plugin for testing several things in QGIS
 about=Plugin for learning PyQGIS and testing several things in QGIS 
-version=1.0.0
-qgisMinimumVersion=3.0
+version=2.0
+qgisMinimumVersion=3.4
 qgisMaximumVersion=3.99
-category=Processing
+category=Plugins
+
 author=Germán Carrillo (GeoTux)
 email=gacarrillo@linuxmail.org
-tags=tests
+
+tags=tests,gui,toolbar,menu,action,button,gui,custom
+
 homepage=https://github.com/gacarrillor/test
 tracker=https://github.com/gacarrillor/test/issues
 repository=https://github.com/gacarrillor/test
+
 icon=icon_default.png
 experimental=False
 deprecated=False
+
+changelog=2.0 (02.05.2023)
+    ...Migrate to QGIS 3
+  1.0 (28.01.2015)
+    ...First version
