@@ -52,6 +52,8 @@ Go to [Tags](https://github.com/gacarrillor/test/tags) to see all versions of th
 
   See this [post](https://gis.stackexchange.com/a/245398/4972) for context.
   Download [plugin ZIP file](https://github.com/gacarrillor/test/archive/refs/tags/tooltip_raster_values.zip).
+  
+  ![image](https://user-images.githubusercontent.com/652785/236654966-952f3f9e-e328-434f-92b8-4890a82156a1.png)
 
 
 **Installation**
