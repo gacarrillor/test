@@ -3,7 +3,9 @@ QGIS plugin for testing a variety of aspects related to PyQGIS
 
 **Tags**
 
-Go to [Tags](https://github.com/gacarrillor/test/tags) to see all versions of the plugin (each version tackles a different aspect). This is a summary:
+Go to [Tags](https://github.com/gacarrillor/test/tags) to see all versions of the plugin (each version tackles a different aspect).
+Make sure you use a plugin version that corresponds to your QGIS version. Note that tags for QGIS v3 have a `_v3` suffix.
+This is a summary:
 
 
 * [QGIS GUI customization](https://github.com/gacarrillor/test/tree/qgis_gui_customization_v3) (QGIS 3)
